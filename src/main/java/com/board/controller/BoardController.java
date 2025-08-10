@@ -21,11 +21,10 @@ public class BoardController {
 	@RequestMapping("/Board")
 	public String list( @RequestParam("menu_name") String menu_name,
 						Model model
-						) {
-					
+						) {					
 		List<BoardDTO> list = boardMapper.getBoardList(menu_name);
 		model.addAttribute("boardList", list);
 		System.out.println(list);
-		return "board/list";
+		return "board/boardlist";
 	}
 }

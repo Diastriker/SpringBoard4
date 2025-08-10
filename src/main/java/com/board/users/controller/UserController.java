@@ -64,10 +64,6 @@ public class UserController {
 	}
 	
 	
-	
-	
-	
-	
 //  @Autowired	 // 자동 new
 	/*
 	private UserMapper menuMapper;

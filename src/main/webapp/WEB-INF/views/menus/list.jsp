@@ -43,8 +43,7 @@
 				<td>Menu_id</td>
 				<td>Menu_name</td>
 				<td>Menu_seq</td>
-				<td><input type="button">삭제</td>
-				<td>수정</td>
+				<td colspan="2">변경사항</td>
 			</tr>
 			
 			<tr>

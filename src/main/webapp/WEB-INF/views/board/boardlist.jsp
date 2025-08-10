@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>BoardList</title>
+<link rel="icon" type="image/ico" href="/img/favicon.ico" />
+<link rel="stylesheet" href="/css/common2.css" />
+
+<style>
+	th { background : #888;
+			 border-color: royalblue; 
+			  }	
+</style>
 
 </head>
 <body>
@@ -23,12 +31,12 @@
 			<c:forEach var="board" items="${ boardList }">
 			<tr>
 				<td>${ board.idx }</td>
-				<td>${ board.menu_id }</td>
+				<td>${ board.menu_name }</td>
 				<td>${ board.title }</td>
 				<td>${ board.content }</td>
 				<td>${ board.writer }</td>
 				<td>${ board.regdate }</td>
-				<td>${ board.hit }</td>
+				<td>${ board.hit }개</td>
 			</tr>
 			</c:forEach> 
 		</table>
