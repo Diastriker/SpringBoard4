@@ -16,5 +16,7 @@ public interface BoardMapper {
 
 	void insertBoard(BoardDTO boardDTO);
 
-	void deleteBoard(BoardDTO boardDTO);
+	void deleteView(BoardDTO boardDTO);
+
+	BoardDTO getView(int idx);
 }

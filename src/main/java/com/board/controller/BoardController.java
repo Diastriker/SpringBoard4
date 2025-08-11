@@ -38,7 +38,6 @@ public class BoardController {
 		mv.addObject("menudto",menudto);
 		mv.addObject("boardList",boardList);
 		mv.addObject("menuList",menuList);
-		System.out.println(boardList);
 		mv.setViewName("board/boardtotallist"); // jsp 파일
 		return mv;
 	}
@@ -87,19 +86,31 @@ public class BoardController {
 		mv.setViewName("redirect:/Board/TotalList?menu_id=" + menu_id);
 		System.out.println("추가:" + boardDTO);
 		return mv;
+	}	
+	
+	@RequestMapping("/View")
+	public ModelAndView view(@RequestParam("idx") int idx) {
+		BoardDTO boardList = boardMapper.getView(idx);
+		List<MenuDTO> menuList = menuMapper.getMenuList();
+		
+		System.out.println("View View View View View View View :" + boardList);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("boardList", boardList);
+		mv.addObject("menuList", menuList);
+		mv.setViewName("/board/view");
+		return mv;
 	}
 	
-	
-	
-	@RequestMapping("/Delete")
+	@RequestMapping("/DelView")
 	public ModelAndView delete(BoardDTO boardDTO) {
-		boardMapper.deleteBoard(boardDTO);
+		boardMapper.deleteView(boardDTO);
 		String menu_id = boardDTO.getMenu_id();
 		System.out.println(menu_id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:/Board/TotalList?menu_id=" + menu_id);
 		return mv;
 	}
+	
 }
 
 

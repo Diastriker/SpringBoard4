@@ -30,13 +30,19 @@
  		 )
  	</insert>
  	
+ 	<select id="getView" resultType="com.board.domain.BoardDTO">
+ 		SELECT MENU_ID, TITLE, CONTENT, WRITER, REGDATE, HIT
+ 		FROM BOARD
+ 		WHERE IDX = #{idx}
+ 	</select>
+ 	
  	<update id="">
  	
  	</update>
  	
- 	<delete id="deleteBoard">
+ 	<delete id="deleteView">
  		DELETE FROM BOARD
- 		WHERE TITLE = #{ title }
+ 		WHERE WRITER = #{ writer }
  	</delete>
 </mapper>
 

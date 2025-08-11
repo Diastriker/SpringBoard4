@@ -20,7 +20,6 @@
 	
 	input { width : 100%; }
 	input[type=submit] { width : 100px; }	
-	
 
 </style>
 </head>
