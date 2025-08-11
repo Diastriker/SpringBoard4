@@ -88,6 +88,18 @@ public class BoardController {
 		System.out.println("추가:" + boardDTO);
 		return mv;
 	}
+	
+	
+	
+	@RequestMapping("/Delete")
+	public ModelAndView delete(BoardDTO boardDTO) {
+		boardMapper.deleteBoard(boardDTO);
+		String menu_id = boardDTO.getMenu_id();
+		System.out.println(menu_id);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Board/TotalList?menu_id=" + menu_id);
+		return mv;
+	}
 }
 
 

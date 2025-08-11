@@ -15,4 +15,6 @@ public interface BoardMapper {
 	List<BoardDTO> getTotalList( MenuDTO menuDTO);
 
 	void insertBoard(BoardDTO boardDTO);
+
+	void deleteBoard(BoardDTO boardDTO);
 }

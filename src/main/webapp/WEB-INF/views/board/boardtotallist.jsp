@@ -29,7 +29,7 @@ td { text-align: center; }
 					
 	 }
 	
-	td[colspan] {text-align : right;}
+	td[colspan="5"] {text-align : right;}
 	/*
 	tr:first-child td {
 		border-color : white;
@@ -77,8 +77,7 @@ td { text-align: center; }
 					<a href="/Board/WriteForm?menu_id=${ menudto.menu_id }">새 게시물 추가</a>
 				</td>
 			</tr>
-				
-			
+							
 			<c:forEach var="board" items="${ boardList }">
 			<tr>
 				<td>${ board.idx }</td>

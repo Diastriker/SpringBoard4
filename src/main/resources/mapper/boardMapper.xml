@@ -28,8 +28,19 @@
  			#{content},
  			#{writer}
  		 )
- 		 
  	</insert>
  	
+ 	<update id="">
+ 	
+ 	</update>
+ 	
+ 	<delete id="deleteBoard">
+ 		DELETE FROM BOARD
+ 		WHERE TITLE = #{ title }
+ 	</delete>
 </mapper>
+
+
+
+
 
