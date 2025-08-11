@@ -21,8 +21,8 @@
 	   <a href="/Users/List">유저 목록</a><br>
 	   <a href="/Users/WriteForm">유저 추가</a><br>
 	   <hr>
-	   <a href="/Board/List">게시판</a><br>
-	   <a href="/Board/WriteForm">게시판 추가</a><br>
+	   <a href="/Board/TotalList?menu_id=MENU01">게시판 총목록</a><br>
+	   <a href="/Board/WriteForm?menu_id=MENU01">새 게시판 추가</a><br>	  
    </main>  
 </body>
 </html>

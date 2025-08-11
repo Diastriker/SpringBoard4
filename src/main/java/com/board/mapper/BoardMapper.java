@@ -6,8 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.board.domain.BoardDTO;
+import com.board.menus.domain.MenuDTO;
 
 @Mapper
 public interface BoardMapper {
 	List<BoardDTO> getBoardList(@Param("menu_name") String menu_name);
+
+	List<BoardDTO> getTotalList( MenuDTO menuDTO);
+
+	void insertBoard(BoardDTO boardDTO);
 }
