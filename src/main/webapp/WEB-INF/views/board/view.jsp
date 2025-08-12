@@ -139,9 +139,9 @@
 					check.addEventListener('click', function() {
 						alert("삭제성공")
 						document.body.removeChild(overlay);
-						window.location.href = btns.href; // 다시 기존기능 실행가능
+						window.location.href = btns.href; // btns 의 href 내용을 다시 window.location 에 넣는다
 					})
-					
+
 					const cancel = document.createElement('button')
 					cancel.innerHTML = "취소";
 					cancel.addEventListener('click', function() {
