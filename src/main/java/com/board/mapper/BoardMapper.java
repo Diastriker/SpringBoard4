@@ -20,7 +20,7 @@ public interface BoardMapper {
 
 	BoardDTO getView(BoardDTO boardDTO);
 
-	BoardDTO getViewList(int idx);
+	BoardDTO getViewList(BoardDTO boardDTO);
 
 	void update(BoardDTO boardDTO);
 

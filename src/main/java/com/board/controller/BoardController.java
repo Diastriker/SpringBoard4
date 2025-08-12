@@ -136,16 +136,22 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/UpdateForm")
-	public ModelAndView getUpdateList(@RequestParam("idx") int idx) {
-		System.out.println(idx);
-		BoardDTO updateList = boardMapper.getViewList(idx);
+	public ModelAndView getUpdateList(BoardDTO boardDTO) {
+		System.out.println(boardDTO);
+		BoardDTO updateList = boardMapper.getViewList(boardDTO);
 		List<MenuDTO> menuList = menuMapper.getMenuList();
 		
 		System.out.println(updateList);
 		
+		BoardDTO board = boardMapper.getView(boardDTO);  // 받은 idx로 다시 select
+		String menu_id = board.getMenu_id();             // select 한것들에 menu_id 를 get하기   
+		MenuDTO menuDTO = new MenuDTO(menu_id, null ,0); // get 쓰기위해 menuDTO 생성자에 파마미터넣기     
+	    menuDTO = menuMapper.getMenu(menuDTO);           // menu_name을 가져옴
+		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("updateList",updateList);
 		mv.addObject("menuList", menuList);
+		mv.addObject("menuDTO", menuDTO);
 		mv.setViewName("/board/updateview");
 		return mv;
 	}
@@ -155,10 +161,10 @@ public class BoardController {
 		System.out.println("Update Update Update Update: " + boardDTO);
 		String menu_id = boardDTO.getMenu_id();
 		
-		
+		//받은 정보를 수정
         boardMapper.update(boardDTO);
 		
-        
+        // 돌아가기
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:/Board/TotalList?menu_id=" + menu_id);
 		return mv;
