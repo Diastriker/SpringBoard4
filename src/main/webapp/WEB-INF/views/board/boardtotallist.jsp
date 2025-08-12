@@ -10,31 +10,32 @@
 <link rel="stylesheet" href="/css/common2.css" />
 
 <style>
-td { text-align: center; }
-	
-	tr:first-child{
-		background-color : black;
-		color : white;
-		font-weight : bold;
-		/* SCSS 문법 (sass 문법중에 하나) */
-		/* SCSS 문법 : 별도 라이브러리 필요(스프링에서 라이브러리 없이 자동적용) */
+	#table {
 		td {
-			border-color : red;
-			color : white;
+			padding : 10px;
+			text-align : center;
 		}
+		td:nth-of-type(1) { width : 100px; }
+		td:nth-of-type(2) { width : 440px; text-align : left;}
+		td:nth-of-type(3) { width : 100px; }
+		td:nth-of-type(4) { width : 100px; }
+		td:nth-of-type(5) { width : 60px; }
+		
+		tr:first-child {
+			background : #333;
+			color : white;
+			font-weight : 700;
+			td {
+				border-color : silver;
+			}
+			& > td:nth-of-type(2) { text-align : center; }
+		}
+		
+		tr:nth-of-type(2) td {
+			text-align : right;
+		}
+		
 	}
-	
-	#menu a { color : white;
-					font-weight : bold;
-					
-	 }
-	
-	td[colspan="5"] {text-align : right;}
-	/*
-	tr:first-child td {
-		border-color : white;
-	}
-	*/
 </style>
 
 </head>
@@ -63,7 +64,7 @@ td { text-align: center; }
    -->
   <hr>
   <!-- 게시물 목록 -->
-		<table>
+		<table id="table">
 			<tr>
 			 	<td>게시판 번호</td>
 			 	<td>제목</td>
@@ -82,7 +83,7 @@ td { text-align: center; }
 			<tr>
 				<td>${ board.idx }</td>
 				<td>
-					<a href="/Board/View?idx=${ board.idx }">${ board.title }</a>
+					<a href="/Board/View?idx=${ board.idx }&menu_id=${menudto.menu_id}">${ board.title }</a>
 				</td>
 				<td>${ board.writer }</td>
 				<td>${ board.regdate }</td>
